@@ -13,7 +13,8 @@ public class Prova {
 
 	public void creaGrafo() {
 		Graph<Integer, DefaultEdge> g = new SimpleGraph<Integer, DefaultEdge>(DefaultEdge.class);
-
+		//la prima coppia di [] rappresenta i vertici la seconda gli archi
+//		aggiungiamo vertici e archi(se gliarchi sono presentati con {} --> NON ORIENTATO)
 		g.addVertex(1);
 		g.addVertex(2);
 		g.addVertex(3);
@@ -37,9 +38,10 @@ public class Prova {
 			else
 				System.out.println(g.getEdgeTarget(e));
 		}
-		
-		List<Integer> vicini = Graphs.neighborListOf(g, 2);
-		System.out.println(vicini);
+//		ESISTE UNA CLASSE 'Graphs' che contiene metodi STATICI quindi che chiamo scrivendo Graphs.metodo
+//		e passando come parametro il grafo. Questa classe ha metodi MOLTO utili!
+		List<Integer> vicini = Graphs.neighborListOf(g, 2);//TROVO I VERTICI VICINI (ADIACENTI) AL VERTICE 2.
+		System.out.println(vicini);						   //IN UN GRAFO ORIENTANTO VICINI PRECEDENTI E SUCCESSIVI
 	}
 
 	public static void main(String args[]) {
